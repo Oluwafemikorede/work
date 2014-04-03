@@ -172,7 +172,7 @@ body {
                           
                            
                            
-                           <img onclick="addLocation()" src="images/g-code-logo2.png" class="border-rad" />
+                           <img  src="images/g-code-logo2.png" class="border-rad" />
                            
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                <img src="images/g-code-logo2.png" class="border-rad" />
@@ -206,18 +206,25 @@ body {
     navigator.geolocation.getCurrentPosition(
         function(position) {
          //   $('.location', this.el).html(position.coords.latitude + ',' + position.coords.longitude);
-            alert(position.coords.latitude + ',' + position.coords.longitude);
+            app.showAlert(position.coords.latitude + ',' + position.coords.longitude);
         },
         function() {
-            alert('Error getting location');
+            app.showAlert('Error getting location');
         });
     return false;
 };          
                           
                           
-                          
+/*                          
 changePicture = function(event) {
-    event.preventDefault();
+   
+};*/
+                       
+                          
+                         $('#camera').click(function(event){
+                             
+                    
+                           event.preventDefault();
     if (!navigator.camera) {
         app.showAlert("Camera API not supported", "Error");
         return;
@@ -238,13 +245,6 @@ changePicture = function(event) {
         options);
  
     return false;
-};
-                       
-                          
-                         $('#camera').click(function(){
-                             
-                    
-                           alert('camera clicked');  
                              
                              
                          });
