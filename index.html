@@ -222,9 +222,14 @@ body {
     }
 
     var options =   {   quality: 50,
-                        destinationType: Camera.DestinationType.DATA_URL,
-                        sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-                        encodingType: 0     // 0=JPG 1=PNG
+                       // destinationType: Camera.DestinationType.DATA_URL,
+                                        
+                     
+                      targetWidth: 1000,
+                 targetHeight: 1000,
+                 destinationType: Camera.DestinationType.FILE_URI,
+                 encodingType: Camera.EncodingType.JPEG,
+                 sourceType: Camera.PictureSourceType.CAMERA
                     };
 
      navigator.camera.getPicture(
